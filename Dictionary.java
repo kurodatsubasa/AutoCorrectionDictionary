@@ -8,11 +8,13 @@
  */
 package program1;
 
+import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Dictionary {
-    private ArrayList<String> wordList;
-    private ArrayList<Character> keyboardLayout;
+    private List<String> wordList;
+    private List<Character> keyboardLayout;
     
     // default constructor
     public Dictionary(){
@@ -20,20 +22,21 @@ public class Dictionary {
         keyboardLayout = new ArrayList<>();
     }
 
-    // Getters & Setters
-    public ArrayList<String> getWordList() {
+    // Getters & Setters for wordList
+    public List<String> getWordList() {
         return wordList;
     }
 
-    public void setWordList(ArrayList<String> wordList) {
+    public void setWordList(List<String> wordList) {
         this.wordList = wordList;
     }
 
-    public ArrayList<Character> getKeyboardLayout() {
+    // Getters and Setters for keyboardLayout
+    public List<Character> getKeyboardLayout() {
         return keyboardLayout;
     }
 
-    public void setKeyboardLayout(ArrayList<Character> keyboardLayout) {
+    public void setKeyboardLayout(List<Character> keyboardLayout) {
         this.keyboardLayout = keyboardLayout;
     }
     
@@ -45,4 +48,18 @@ public class Dictionary {
         else
             System.out.println(word + "is already in the dictionary.");
     }
+    
+    /* for testing reading files
+    public void printWords() {
+        for(String word : wordList) {
+            System.out.println(word);
+        }
+    }
+    
+    public void printKeyboard() {
+        for(char ch: keyboardLayout) {
+            System.out.println(ch);
+        }
+       } 
+    */
 }

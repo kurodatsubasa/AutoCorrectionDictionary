@@ -10,7 +10,10 @@ package program1;
 
 public class Program1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        Dictionary dictionary = new Dictionary();
+        FileIO.readFile("words.txt", dictionary, 0);
+        FileIO.readFile("keyboard.txt", dictionary, 1);
     }
     
 }
