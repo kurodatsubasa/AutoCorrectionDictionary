@@ -8,33 +8,69 @@
  */
 package program1;
 
-import java.util.*;
-import static program1.TextMessage.textMessage;
+import java.util.ArrayList;
 
 public class TextMessage {
+    // stores the user input as it is
+    private String inputStr;
+    // stores the user input as separate searchable words
+    private ArrayList<String> words;
     
-    public static String textMessage (String message)
-    {
+    // default constructor
+    public TextMessage() {
+        inputStr = "";
+        words = new ArrayList<>();
+    } // end TextMessage
+    
+    // overloaded constructor that accepts input string and input string.split
+    public TextMessage(String input, String[] tokens) {
+        inputStr = input;
+        words = new ArrayList<>();
+        processText(tokens);
+    } // end TextMessage
+    
+    // overloaded constructor that accepts input string
+    public TextMessage(String input) {
+        inputStr = input;
+        words = new ArrayList<>();
+        processText(inputStr.split(" "));
+    } // end TextMessage
 
-        String [] arr = message.split(" ");
-        
-        for (String array : arr)
-        {
-            System.out.println(array + ":" /*+ keyboardLayout()*/); 
-        }
-           
-        System.exit(0);
+    // getters and setters for input Str
+    public String getInputStr() {
+        return inputStr;
+    } // end getInputStr
+
+    public void setInputStr(String inputStr) {
+        this.inputStr = inputStr;
+        processText(inputStr.split(" "));
+    } // end setInputStr
+
+    // getters and setters for words
+    public ArrayList<String> getWords() {
+        return words;
+    } // end getWords
+
+    public void setWords(ArrayList<String> words) {
+        this.words = words;
+    } // end setWords
     
-         return textMessage();
-         
-         // need a way to return all the statements printed back to the main
-         // this method works only in its loop and within class
-        /* prints out like this
-         hellow world
-         hello:
-         world:
-         */
+    // overloaded getter that accepts string array
+    public void setWords(String[] words) {
+        processText(words);
+    } // end setWords
+    
+    // process the tokens for the search in dictionary
+    public void processText(String[] tokens) {
         
+        for (String token: tokens) {
+            if(token.matches("[a-zA-Z]+"))
+                getWords().add(token);
+        } // end for
+    } // end processText
+    
+    public void clear() {
+        inputStr = "";
+        words.clear();
     }
-    
-}
+} // end TextMessage
