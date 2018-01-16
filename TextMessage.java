@@ -61,7 +61,7 @@ public class TextMessage {
     } // end setWords
     
     // process the tokens for the search in dictionary
-    public void processText(String[] tokens) {
+    private void processText(String[] tokens) {
         
         for (String token: tokens) {
             if(token.matches("[a-zA-Z]+"))

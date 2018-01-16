@@ -75,7 +75,7 @@ public class Dictionary {
      * replaces it with adjacent letters on the keyboarrd and searches for the modified
      * word in the word list. 
      */
-     protected StringBuilder suggestWords (StringBuilder searchWord) {
+     private StringBuilder suggestWords (StringBuilder searchWord) {
          // to store matched words
          StringBuilder matchWords = new StringBuilder("");
          
