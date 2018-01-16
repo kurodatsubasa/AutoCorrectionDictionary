@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileIO {
@@ -23,23 +22,23 @@ public class FileIO {
      */
     public static void readFile(String fileName, Dictionary dictionary, int option) throws Exception{
         
-        // readsthe file using Java 7 Paths and Files
+        // reads the file using Java 7 Paths and Files
         try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
             // if option is 0, reading list of words
             if(option == 0)
                 /* setups dictionary word list (Java 8)
                  * br.lines() by getting the text file as a String stream
-                 * collect(Collectors.toList()) and converting it to List  
+                 * collect(Collectors.toCollection(ArrayList::new))) and collect it as a ArrayList  
                  */
-                dictionary.setWordList( br.lines().collect(Collectors.toList()));
+                dictionary.setWordList(br.lines().collect(Collectors.toCollection(ArrayList::new)));
             // if option is 1, reading keyboard layout
             else if (option == 1)
-                /* setups dictionary keyboard layout(Java 8)
+                /* setups dictionary keyboard layout (Java 8)
                  * br.readLine().chars() by converting string to int stream,
                  * mapToObj(e-> (char)e) converting int to char
-                 * collect(Collectors.toList())  then collect it as a List
+                 * collect(Collectors.toCollection(ArrayList::new)))  then collect it as a ArrayList
                  */
-                dictionary.setKeyboardLayout(br.readLine().chars().mapToObj(e->(char)e).collect(Collectors.toList()));
+                dictionary.setKeyboardLayout(br.readLine().chars().mapToObj(e->(char)e).collect(Collectors.toCollection(ArrayList::new)));
         } catch (IOException e) {
             e.printStackTrace();
         } // end try catch
