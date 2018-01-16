@@ -8,6 +8,33 @@
  */
 package program1;
 
+import java.util.*;
+import static program1.TextMessage.textMessage;
+
 public class TextMessage {
+    
+    public static String textMessage (String message)
+    {
+
+        String [] arr = message.split(" ");
+        
+        for (String array : arr)
+        {
+            System.out.println(array + ":" /*+ keyboardLayout()*/); 
+        }
+           
+        System.exit(0);
+    
+         return textMessage();
+         
+         // need a way to return all the statements printed back to the main
+         // this method works only in its loop and within class
+        /* prints out like this
+         hellow world
+         hello:
+         world:
+         */
+        
+    }
     
 }
