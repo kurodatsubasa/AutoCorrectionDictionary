@@ -66,7 +66,7 @@ public class Dictionary {
             matchWords.append(suggestWords(new StringBuilder(keyWord)));
         // if the matchWords is empty, no matched words were found
         if (matchWords.length() == 0)
-            matchWords.append("NOT FOUND");
+            matchWords.append("NO MATCH");
         
         return matchWords.toString();
     } // end findWord
