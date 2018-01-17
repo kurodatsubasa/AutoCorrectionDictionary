@@ -46,5 +46,7 @@ public class Program1 {
             System.out.println("\nEnter a text message, \"done\" (no quotes) to exit");
             input = sc.nextLine();   
         } // end while
+        
+        sc.close();
     } // end main
 } // end Program 1

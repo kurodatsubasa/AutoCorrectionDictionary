@@ -63,9 +63,12 @@ public class TextMessage {
     // process the tokens for the search in dictionary
     private void processText(String[] tokens) {
         
+        // loops through each word in tokens
         for (String token: tokens) {
+            // if the word contains only alphabet
             if(token.matches("[a-zA-Z]+"))
-                getWords().add(token);
+                // adds the word to the processed list
+                words.add(token);
         } // end for
     } // end processText
     

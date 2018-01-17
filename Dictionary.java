@@ -79,7 +79,7 @@ public class Dictionary {
          // to store matched words
          StringBuilder matchWords = new StringBuilder("");
          
-         // loops through each character in the words
+         // loops through each character in the word
          for(int i = 0; i < searchWord.length(); i++) {
              // gets the index of current letter on the keyboard
              int current = keyboardLayout.indexOf(searchWord.toString().toLowerCase().charAt(i));
